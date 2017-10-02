@@ -1,4 +1,4 @@
-<style></style></head><body id="preview">
+</head><body id="preview">
 <h1><a id="Aegis_0"></a>Aegis</h1>
 <p>Aegis is an irc based python botnet that features:</p>
 <ul>
