@@ -1,0 +1,2 @@
+# Aegis
+Python irc bot
