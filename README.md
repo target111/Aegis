@@ -1,8 +1,3 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Aegis</title><script type="text/javascript">
-//<![CDATA[
-try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1506175444,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"https://ajax.cloudflare.com/cdn-cgi/nexp/dok3v=9eecb7db59/","cloudflare-static": "https://ajax.cloudflare.com/cdn-cgi/scripts/c2b63e8a/"},atok:"e053458974ee36ec3bed37e9a52a2f86",petok:"a3c723af0a465562e77721d011cedbecbaf27e01-1506927504-1800",rocket: "a",zone:"dillinger.io"}];document.write('<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/nexp/dok3v=c37cbdadf2/cloudflare.min.js"><'+'\/script>');}}catch(e){};
-//]]>
-</script>
 <style></style></head><body id="preview">
 <h1><a id="Aegis_0"></a>Aegis</h1>
 <p>Aegis is an irc based python botnet that features:</p>
