@@ -4,6 +4,7 @@
 <ul>
 <li>An advanced SSH scanner that unlike others, really works.</li>
 <li>DDOS  -  udp flooder</li>
+<li>Execute commands on host</li>
 </ul>
 <p>You can also:</p>
 <ul>
