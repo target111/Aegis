@@ -496,7 +496,7 @@ while True:
                 if cmd == "sh":
                     if len(args) > 2:
                         try:
-                            process = subprocess.Popen(cmd[2:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                            process = subprocess.Popen(args[2:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                         except:
                             bot.send("Failed sending command.", data.channel)
 
